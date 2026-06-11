@@ -1,50 +1,36 @@
-# OCR App
+# ocr-app
 
-Aplicação web para extração de texto de PDFs e imagens usando OCR.
+Extrai texto de PDFs e imagens direto no browser. Construído com React, FastAPI e Tesseract OCR.
 
-![Light mode](https://i.imgur.com/placeholder.png)
+## stack
 
-## Funcionalidades
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Python, FastAPI
+- **OCR:** Tesseract + pdf2image + Pillow
 
-- Upload de PDF ou imagem (JPG, PNG, WEBP)
-- Extração de texto com Tesseract OCR
-- Pré-processamento de imagem para melhor precisão
-- Suporte a português e inglês
-- Dark mode
-- Copiar ou baixar o texto extraído em `.txt`
-- Histórico de documentos processados
-- Validação de tipo e tamanho de arquivo
+## funcionalidades
 
-## Tecnologias
+- upload de PDF ou imagem (JPG, PNG, WEBP)
+- pré-processamento automático de imagem para melhorar a leitura
+- suporte a português e inglês
+- dark mode
+- copiar ou baixar o resultado em `.txt`
+- histórico da sessão
+- validação de tipo e tamanho (máx. 10MB)
 
-**Frontend**
-- React
-- Tailwind CSS
+## rodar localmente
 
-**Backend**
-- Python + FastAPI
-- Tesseract OCR
-- pdf2image + Pillow
+**requisitos:** Node.js, Python 3.9+, Tesseract e Poppler instalados
 
-## Como rodar localmente
-
-### Pré-requisitos
-- Node.js
-- Python 3.9+
-- Tesseract instalado (`brew install tesseract tesseract-lang`)
-- Poppler instalado (`brew install poppler`)
-
-### Backend
 ```bash
+# backend
 cd backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 uvicorn main:app --reload
-```
 
-### Frontend
-```bash
+# frontend
 cd frontend
 npm install
 npm start
@@ -52,7 +38,7 @@ npm start
 
 Acesse `http://localhost:3000`
 
-## Estrutura
+## estrutura
 
 ```
 ocr-app/
